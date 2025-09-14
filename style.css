@@ -1,1 +1,182 @@
-/* Add styles here */
+body {
+    color: #fff;
+    font-family: 'Roboto Mono', monospace;
+    margin: 0;
+    padding: 0;
+    background-color: #0d1a26; 
+    transition: background-color 0.5s ease;
+}
+
+header {
+    background: url('/assets/end-of-evangelion.jpg') no-repeat center center/cover; /* TEST with a different image */
+    padding: 5vw 10vw;
+    color: #fff;
+}
+
+.header-content {
+    max-width: 600px;
+}
+
+.header-title {
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 4vw;
+    font-weight: 700;
+    margin: 0;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+}
+
+.header-subtitle {
+    font-size: 1.2vw;
+    margin-bottom: 2em;
+}
+
+.header-text-block {
+    font-size: 1vw;
+    line-height: 1.6;
+}
+
+main {
+    padding: 50px;
+}
+
+#character-carousel-container {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.2);
+    border-radius: 15px;
+    margin-bottom: 50px;
+}
+
+#character-carousel-container button {
+    background: none;
+    border: 2px solid transparent;
+    border-radius: 20px;
+    padding: 5px;
+    cursor: pointer;
+    transition: border-color 0.3s ease;
+}
+
+#character-carousel-container button:hover, #character-carousel-container button:focus {
+    border-color: #fff;
+}
+
+#character-carousel-container img {
+    width: 100px;
+    height: 80px;
+    border-radius: 25px;
+}
+
+#character-content {
+    background-color: transparent; /* Remove background from here */
+}
+
+.profile {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    align-items: center;
+    margin-bottom: 50px;
+}
+
+.profile-details h2 {
+    font-size: 3rem;
+    margin: 0 0 20px;
+    color: #fff;
+}
+
+.psych-bars {
+    margin-top: 30px;
+}
+
+.bar {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.bar span:first-child {
+    width: 200px;
+}
+
+.bar span:last-child {
+    width: 50px;
+    text-align: right;
+}
+
+.progress {
+    flex: 1;
+    height: 10px;
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 5px;
+    position: relative;
+}
+
+.progress::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: var(--progress);
+    background-color: var(--color);
+    border-radius: 5px;
+}
+
+.profile-image img {
+    width: 100%;
+    max-width: 400px;
+    border-radius: 15px;
+    justify-self: end;
+}
+
+.analysis {
+    margin: 50px 0;
+    text-align: center;
+}
+
+.analysis h2 {
+    font-size: 2rem;
+    margin-bottom: 30px;
+}
+
+.analysis-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    text-align: left;
+    margin-bottom: 30px;
+}
+
+.analysis-card {
+    background-color: #0d1a26;
+    padding: 25px;
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.analysis-card h3 {
+    margin: 0 0 15px;
+    color: #fff;
+}
+
+.keywords {
+    font-size: 1.2rem;
+    color: #ccc;
+}
+
+.summary {
+    margin-top: 50px;
+    text-align: center;
+}
+
+.summary h2 {
+    font-size: 2rem;
+    margin-bottom: 30px;
+}
+
+.radar-chart-container {
+    max-width: 600px;
+    margin: 0 auto;
+}
