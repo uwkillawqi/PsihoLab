@@ -8,7 +8,7 @@ body {
 }
 
 header {
-    background: url('/assets/end-of-evangelion.jpg') no-repeat center center/cover; /* TEST with a different image */
+    background: url('/assets/end-of-evangelion.jpg') no-repeat center center/cover;
     padding: 5vw 10vw;
     color: #fff;
 }
@@ -63,13 +63,13 @@ main {
 }
 
 #character-carousel-container img {
-    width: 100px;
+    width: 120px;
     height: 80px;
     border-radius: 25px;
 }
 
 #character-content {
-    background-color: transparent; /* Remove background from here */
+    background-color: transparent;
 }
 
 .profile {
@@ -111,6 +111,7 @@ main {
     background-color: rgba(255, 255, 255, 0.2);
     border-radius: 5px;
     position: relative;
+    overflow: hidden;
 }
 
 .progress::after {
@@ -120,8 +121,9 @@ main {
     left: 0;
     height: 100%;
     width: var(--progress);
-    background-color: var(--color);
+    background-color: var(--color, '#ff0000');
     border-radius: 5px;
+    transition: width 0.5s ease-out, background-color 0.5s ease;
 }
 
 .profile-image img {
@@ -179,4 +181,69 @@ main {
 .radar-chart-container {
     max-width: 600px;
     margin: 0 auto;
+}
+
+.gallery-container {
+    position: relative;
+    max-width: 400px;
+    margin: auto;
+    justify-self: end;
+}
+
+.slide {
+    display: none;
+}
+
+.slide.active-slide {
+    display: block;
+}
+
+.gallery-slides .slide img {
+    width: 100%;
+    border-radius: 15px;
+}
+
+.prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 16px;
+    margin-top: -22px;
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+    background-color: rgba(0,0,0,0.3);
+}
+
+.next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+.prev:hover, .next:hover {
+    background-color: rgba(0,0,0,0.8);
+}
+
+.gallery-dots {
+    text-align: center;
+    padding: 10px 0;
+}
+
+.dot {
+    cursor: pointer;
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover {
+    background-color: #717171;
 }

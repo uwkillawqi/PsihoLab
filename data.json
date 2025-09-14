@@ -3,8 +3,13 @@
     "shinji": {
       "name": "Синдзи Икари",
       "role": "Пилот Евангелиона-01",
-      "image": "assets/shinji-ikari.png",
+      
       "icon": "assets/shinji-icon.png",
+      "gallery": [
+        "assets/shinji1.jpg",
+        "assets/shinji2.jpg",
+        "assets/shinji3.jpg"
+      ],
       "color": "#2c3e50",
       "profile": {
         "stats": [
@@ -33,8 +38,14 @@
     "asuka": {
       "name": "Аска Лэнгли Сорью",
       "role": "Пилот Евангелиона-02",
-      "image": "assets/asuka-langley.png",
+      
       "icon": "assets/asuka-icon.png",
+      "gallery": [
+        
+        "assets/aska1.jpg",
+        "assets/aska2.jpg",
+        "assets/aska3.jpg"
+      ],
       "color": "#7f2c2c",
       "profile": {
         "stats": [
@@ -63,8 +74,13 @@
     "rei": {
       "name": "Аянами Рей",
       "role": "Пилот Евангелиона-00",
-      "image": "assets/rei-ayanami.png",
+      
       "icon": "assets/rei-icon.png",
+      "gallery": [
+        "assets/rei1.jpg",
+        "assets/rei2.jpg",
+        "assets/rei3.jpg"
+      ],
       "color": "#34495e",
       "profile": {
         "stats": [
@@ -93,8 +109,14 @@
     "misato": {
       "name": "Мисато Кацураги",
       "role": "Оперативный командующий NERV",
-      "image": "assets/misato-katsuragi.png",
+      
       "icon": "assets/misato-icon.png",
+      "gallery": [
+        
+        "assets/misato1.jpg",
+        "assets/misato2.jpg",
+        "assets/misato3.jpg"
+      ],
       "color": "#4a2c4a",
       "profile": {
         "stats": [
@@ -123,8 +145,14 @@
     "kaworu": {
       "name": "Каору Нагиса",
       "role": "Пилот-заместитель, 17-й Ангел",
-      "image": "assets/kaworu-nagisa.png",
+      
       "icon": "assets/kaworu-icon.png",
+      "gallery": [
+        
+        "assets/kaworu1.jpg",
+        "assets/kaworu2.jpg",
+        "assets/kaworu3.jpg"
+      ],
       "color": "#565656",
       "profile": {
         "stats": [
@@ -153,8 +181,13 @@
     "ritsuko": {
       "name": "Рицуко Акаги",
       "role": "Главный научный сотрудник NERV",
-      "image": "assets/ritsuko-akagi.png",
+      
       "icon": "assets/ritsuko-icon.png",
+      "gallery": [
+        "assets/ritsuko1.jpg",
+        "assets/ritsuko2.jpg",
+        "assets/ritsuko3.jpg"
+      ],
       "color": "#8b7e2a",
       "profile": {
         "stats": [
@@ -183,8 +216,14 @@
     "gendo": {
       "name": "Гэндо Икари",
       "role": "Главнокомандующий NERV",
-      "image": "assets/gendo-ikari.png",
+      
       "icon": "assets/gendo-icon.png",
+      "gallery": [
+        
+        "assets/gendo1.jpg",
+        "assets/gendo2.jpg",
+        "assets/gendo3.jpg"
+      ],
       "color": "#1a1a1a",
       "profile": {
         "stats": [
@@ -213,8 +252,14 @@
     "kaji": {
       "name": "Рёдзи Кадзи",
       "role": "Тройной агент (NERV, SEELE, правительство Японии)",
-      "image": "assets/ryoji-kaji.png",
+      
       "icon": "assets/kaji-icon.png",
+      "gallery": [
+        
+        "assets/kadzi1.jpg",
+        "assets/kadzi2.jpg",
+        "assets/kadzi3.jpg"
+      ],
       "color": "#3a4f3a",
       "profile": {
         "stats": [
@@ -243,8 +288,14 @@
     "mari": {
       "name": "Мари Илластриэс Макинами",
       "role": "Пилот Евангелиона",
-      "image": "assets/mari-illustrious-makinami.png",
+      
       "icon": "assets/mari-icon.png",
+      "gallery": [
+        
+        "assets/mari1.jpg",
+        "assets/mari2.jpg",
+        "assets/mari3.jpg"
+      ],
       "color": "#7f2c5d",
       "profile": {
         "stats": [
@@ -273,8 +324,14 @@
     "yui": {
       "name": "Юи Икари",
       "role": "Душа Евангелиона-01",
-      "image": "assets/yui-ikari.png",
+      
       "icon": "assets/yui-icon.png",
+      "gallery": [
+        
+        "assets/yui1.jpg",
+        "assets/yui2.jpg",
+        "assets/yui3.jpg"
+      ],
       "color": "#6d5f77",
       "profile": {
         "stats": [

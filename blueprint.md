@@ -1,31 +1,34 @@
-# NERV PSYCHE LAB Blueprint
+
+# NERVE PSYCHE LAB Blueprint
 
 ## Overview
 
-A single-page application for the psychoanalytic analysis of "Evangelion" characters. The site has a minimal, techno, cyberpunk style, mimicking the NERV interfaces from the anime, and displays all information dynamically on the main page.
+This project is an interactive web application designed to provide psychological analyses of the characters from the anime series Neon Genesis Evangelion. The application presents detailed character profiles, including their psychological stats, in-depth analysis, and a visual representation of their mental state in the form of a radar chart.
 
-## Project Structure
+## Implemented Features
 
-*   `index.html`: Main HTML file
-*   `style.css`: Main stylesheet
-*   `main.js`: Main JavaScript file
-*   `data.json`: JSON file containing all character data.
-*   `assets/`: Folder for images
+### Design and Styling
+- **Modern Aesthetics**: The application features a dark, futuristic theme inspired by the NERV interface from the series.
+- **Custom Fonts**: Uses `Roboto Mono` for body text and `Share Tech Mono` for headings to create a technical,monospace aesthetic.
+- **Dynamic Background**: The background color of the page changes dynamically based on the selected character.
+- **Responsive Layout**: The layout is designed to be responsive and adapt to different screen sizes.
 
-## Style and Design
+### Interactivity
+- **Character Carousel**: A top-level navigation allows users to switch between different character profiles.
+- **Dynamic Content**: The main content area is dynamically updated with the selected character's information without a page reload.
+- **Interactive Charts**: Character stats are visualized using a Chart.js radar chart, providing a quick overview of their psychological state.
 
-*   **Color Palette:** Primarily a dark blue-black (`#0d1a26`) with white and accent colors for each character.
-*   **Fonts:** `Roboto Mono` and `Share Tech Mono` for a monospace, technical feel.
-*   **Layout:** A single-page layout. A header and intro are followed by a character carousel. Selecting a character dynamically populates the content sections below (Profile, Analysis, Summary) without a page reload.
+## Current Task: Image Gallery
 
-## Features
-
-*   **Dynamic Content:** All character information (profile, stats, analysis, charts) is loaded from `data.json` and dynamically rendered on the page using JavaScript.
-*   **Character Carousel:** A horizontal row of character icons that, when clicked, updates the content displayed on the page.
-*   **Dynamic Background Color:** The background color of the page changes to match the theme of the selected character.
-*   **Content Sections:**
-    1.  **Profile:** Displays the character's name, role, an image, a series of animated progress bars for psychometric stats, and a summary text.
-    2.  **Analysis:** Shows a grid of cards with detailed analysis (e.g., defense mechanisms, trauma) and a list of keywords.
-    3.  **Summary:** Features a radar chart visualizing the character's mental state using Chart.js.
-*   **Implemented Characters:** Shinji Ikari, Asuka Langley Soryu, Rei Ayanami.
-
+### Plan
+1.  **Update `data.json`**: Add a new `gallery` array to each character object, containing URLs for multiple images.
+2.  **Modify `index.html`**: Replace the static `<img>` element with a new HTML structure for an image gallery. This will include a container for the slides, navigation arrows, and indicator dots.
+3.  **Update `style.css`**: Add CSS for the gallery, including:
+    -   Styling for the gallery container, slides, and navigation elements.
+    -   Fade-in-out transitions for smooth image changes.
+    -   Active states for the indicator dots.
+4.  **Update `main.js`**: Implement the gallery logic:
+    -   A function to render the gallery for the selected character.
+    -   Event listeners for the navigation arrows and indicator dots.
+    -   An interval for automatic image sliding.
+    -   A function to reset the interval when the user interacts with the controls.
