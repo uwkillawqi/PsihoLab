@@ -1,3 +1,4 @@
+
 document.addEventListener('DOMContentLoaded', () => {
     const carouselContainer = document.getElementById('character-carousel-container');
     const contentContainer = document.getElementById('character-content');
@@ -57,8 +58,8 @@ document.addEventListener('DOMContentLoaded', () => {
                         </div>
                     `).join('')}
                 </div>
-                <div class="keywords">
-                    ${character.analysis.keywords.map(keyword => `<span>${keyword}</span>`).join(' &rarr; ')}
+                <div class="keywords-container">
+                    ${character.analysis.keywords.map(keyword => `<span class="keyword-tag">${keyword}</span>`).join('')}
                 </div>
             </section>
             <section class="summary">
@@ -66,6 +67,10 @@ document.addEventListener('DOMContentLoaded', () => {
                 <div class="radar-chart-container">
                     <canvas id="radarChart"></canvas>
                 </div>
+            </section>
+            <section class="diagnosis-section">
+                <h2>Диагноз</h2>
+                <p>${character.diagnosis}</p>
             </section>
         `;
 
@@ -134,7 +139,10 @@ document.addEventListener('DOMContentLoaded', () => {
         const ctx = document.getElementById('radarChart').getContext('2d');
         chartInstance = new Chart(ctx, {
             type: 'radar',
-            data: character.summaryData,
+            data: {
+                labels: character.summaryData.labels,
+                datasets: character.summaryData.datasets
+            },
             options: {
                 scales: {
                     r: {
