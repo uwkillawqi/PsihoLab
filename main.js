@@ -1,4 +1,3 @@
-
 document.addEventListener('DOMContentLoaded', () => {
     const carouselContainer = document.getElementById('character-carousel-container');
     const contentContainer = document.getElementById('character-content');
@@ -148,12 +147,54 @@ document.addEventListener('DOMContentLoaded', () => {
                     r: {
                         angleLines: { color: 'rgba(255, 255, 255, 0.3)' },
                         grid: { color: 'rgba(255, 255, 255, 0.3)' },
-                        pointLabels: { color: '#fff', font: { size: 14 } },
-                        ticks: { display: false }
+                        pointLabels: { 
+                            color: '#fff', 
+                            font: { 
+                                size: 14,
+                                lineHeight: 1.2
+                            },
+                            // Добавляем перенос текста
+                            callback: function(value) {
+                                // Разбиваем длинные фразы на несколько строк
+                                const words = value.split(' ');
+                                const lines = [];
+                                let currentLine = '';
+                                
+                                for (const word of words) {
+                                    if ((currentLine + word).length <= 15) {
+                                        currentLine += (currentLine ? ' ' : '') + word;
+                                    } else {
+                                        if (currentLine) lines.push(currentLine);
+                                        currentLine = word;
+                                    }
+                                }
+                                if (currentLine) lines.push(currentLine);
+                                
+                                return lines;
+                            }
+                        },
+                        ticks: { 
+                            display: false,
+                        },
+                        min: 0,
+                        max: 100,
+                        beginAtZero: true
                     }
                 },
                 plugins: {
-                    legend: { display: false }
+                    legend: { 
+                        display: false
+                    }
+                },
+                elements: {
+                    line: {
+                        tension: 0,
+                        borderJoinStyle: 'miter'
+                    },
+                    point: {
+                        radius: 4,
+                        hoverRadius: 6
+                    }
                 }
             }
         });
