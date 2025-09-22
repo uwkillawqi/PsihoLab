@@ -276,19 +276,84 @@ main {
 }
 
 .diagnosis-section {
-    text-align: center;
-    padding: 5px 0;
+    padding: 40px 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    margin-top: 50px;
 }
 
-.diagnosis-section h2 {
-    font-size: 2rem;
-    margin-bottom: 20px;
+.diagnosis-section h2, .diagnosis-section h3 {
+    text-align: left;
+    margin-left: 20px;
+    position: relative;
 }
 
-.diagnosis-section p {
-    max-width: 600px;
-    margin: 0 auto;
-    font-size: 1.1rem;
-    line-height: 1.6;
+.diagnosis-section h2::before, .diagnosis-section h3::before {
+    content: '|';
+    position: absolute;
+    left: -20px;
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.diagnosis-section > p {
+    text-align: left;
+    margin-left: 40px;
+    margin-bottom: 40px;
+    position: relative;
+}
+
+.diagnosis-section > p::before {
+    content: '\21B3';
+    position: absolute;
+    left: -25px;
+    top: 0;
+    color: rgba(255, 255, 255, 0.5);
+}
+
+
+.video-evidence {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 20px;
+    padding: 0 40px;
+}
+
+.video-item {
+    position: relative;
+    padding-left: 20px;
+}
+
+.video-item::before {
+    content: '\21B3';
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: rgba(255, 255, 255, 0.5);
+}
+
+
+.video-item h4 {
+    text-align: left;
+    margin-bottom: 10px;
+}
+
+.scene-description {
+    text-align: left;
     color: #ccc;
+    font-size: 0.9rem;
+    margin-bottom: 15px;
+    padding-left: 20px;
+    position: relative;
+}
+
+.scene-description::before {
+    content: '\21B3';
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.video-item video {
+    border-radius: 10px;
 }

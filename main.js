@@ -68,8 +68,18 @@ document.addEventListener('DOMContentLoaded', () => {
                 </div>
             </section>
             <section class="diagnosis-section">
-                <h2>Диагноз</h2>
-                <p>${character.diagnosis}</p>
+                <h2>ДИАГНОЗ</h2>
+                <p>${character.diagnosis.text}</p>
+                <h3>ВИДЕОПОДТВЕРЖДЕНИЕ</h3>
+                <div class="video-evidence">
+                    ${character.diagnosis.videos.map(video => `
+                        <div class="video-item">
+                            <h4>${video.title}</h4>
+                            <p class="scene-description">- ${video.description}</p>
+                            <video controls src="${video.video_src}" width="100%" poster="assets/end-of-evangelion.jpg"></video>
+                        </div>
+                    `).join('')}
+                </div>
             </section>
         `;
 
