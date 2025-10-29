@@ -1,34 +1,36 @@
 
-# NERVE PSYCHE LAB Blueprint
+# Blueprint: Evangelion Character Analysis Website
 
-## Overview
+This document outlines the design, features, and development plan for the Evangelion Character Analysis application.
 
-This project is an interactive web application designed to provide psychological analyses of the characters from the anime series Neon Genesis Evangelion. The application presents detailed character profiles, including their psychological stats, in-depth analysis, and a visual representation of their mental state in the form of a radar chart.
+## 1. Overview
 
-## Implemented Features
+The Evangelion Character Analysis website is a digital platform that provides a detailed psychological exploration of the characters from the anime series "Neon Genesis Evangelion." The application offers an immersive and interactive experience for fans and newcomers, allowing them to delve into the complex minds of their favorite characters.
 
-### Design and Styling
-- **Modern Aesthetics**: The application features a dark, futuristic theme inspired by the NERV interface from the series.
-- **Custom Fonts**: Uses `Roboto Mono` for body text and `Share Tech Mono` for headings to create a technical,monospace aesthetic.
-- **Dynamic Background**: The background color of the page changes dynamically based on the selected character.
-- **Responsive Layout**: The layout is designed to be responsive and adapt to different screen sizes.
+## 2. Design and Features
 
-### Interactivity
-- **Character Carousel**: A top-level navigation allows users to switch between different character profiles.
-- **Dynamic Content**: The main content area is dynamically updated with the selected character's information without a page reload.
-- **Interactive Charts**: Character stats are visualized using a Chart.js radar chart, providing a quick overview of their psychological state.
+### Visual Design
 
-## Current Task: Image Gallery
+*   **Color Palette:** A modern and vibrant color scheme, featuring deep purples, reds, and blacks with bright accents, captures the somber and intense atmosphere of "Evangelion."
+*   **Typography:** Expressive fonts are used for headings, while a clean, readable font is employed for the main text to ensure a comfortable reading experience.
+*   **Imagery:** High-quality background images and character icons enhance the visual appeal and provide a strong thematic connection to the series.
+*   **Effects:** Modern CSS effects, such as gradients, shadows, and animations, create a dynamic and engaging user interface.
 
-### Plan
-1.  **Update `data.json`**: Add a new `gallery` array to each character object, containing URLs for multiple images.
-2.  **Modify `index.html`**: Replace the static `<img>` element with a new HTML structure for an image gallery. This will include a container for the slides, navigation arrows, and indicator dots.
-3.  **Update `style.css`**: Add CSS for the gallery, including:
-    -   Styling for the gallery container, slides, and navigation elements.
-    -   Fade-in-out transitions for smooth image changes.
-    -   Active states for the indicator dots.
-4.  **Update `main.js`**: Implement the gallery logic:
-    -   A function to render the gallery for the selected character.
-    -   Event listeners for the navigation arrows and indicator dots.
-    -   An interval for automatic image sliding.
-    -   A function to reset the interval when the user interacts with the controls.
+### Key Features
+
+*   **Interactive Character Selection:** A user-friendly and visually engaging character selection screen allows users to easily navigate and choose the character they wish to explore.
+*   **Character Filter:** A filtering system enables users to sort characters based on specific criteria, such as affiliation or psychological traits.
+*   **Detailed Psychological Analysis:** Each character has a dedicated page with an in-depth analysis of their personality, motivations, and psychological state.
+*   **Interactive Charts:** Interactive charts, powered by Chart.js, visualize the characters' psychological data, providing a clear and concise representation of their mental and emotional state.
+*   **Modern and Responsive Layout:** The website is fully responsive and accessible, ensuring a seamless experience across all devices.
+
+## 3. Current Plan
+
+The following steps will be implemented to enhance the user experience:
+
+1.  **Integrate a modern font from Google Fonts** to improve the website's typography.
+2.  **Implement a hero section** to create a visually appealing and informative introduction for users.
+3.  **Introduce a character filter** to allow users to sort and select characters based on specific criteria.
+4.  **Design and implement a character selection screen** to provide a more intuitive and engaging way for users to navigate and choose characters.
+
+These updates will transform the site into a more modern, visually appealing, and user-friendly platform, offering a more immersive and enjoyable experience for fans of "Evangelion."

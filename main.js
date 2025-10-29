@@ -18,7 +18,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function renderCharacter(charId, characters) {
         const character = characters[charId];
-        body.style.backgroundColor = character.color;
+
+        // Устанавливаем CSS переменные для свечения
+        document.documentElement.style.setProperty('--glow-color', character.color);
+
+        // Применяем фон
+        body.style.background = character.color;
+        body.style.animation = 'none';
 
         if (chartInstance) {
             chartInstance.destroy();
@@ -82,6 +88,13 @@ document.addEventListener('DOMContentLoaded', () => {
                 </div>
             </section>
         `;
+
+        // Запускаем анимации появления
+        const animatedElements = contentContainer.querySelectorAll('.profile, .analysis-card, .video-item, .summary, .diagnosis-section');
+        animatedElements.forEach((el, index) => {
+            el.style.animationDelay = `${index * 100}ms`;
+            el.classList.add('fade-in-up');
+        });
 
         const profileImageContainer = contentContainer.querySelector('.profile-image');
         if (profileImageContainer && character.gallery && character.gallery.length > 0) {

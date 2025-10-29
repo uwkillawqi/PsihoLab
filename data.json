@@ -313,7 +313,7 @@
       "role": "Душа Евангелиона-01, учёный, мать Синдзи",
       "icon": "assets/yui-icon.png",
       "gallery": ["assets/yui1.jpg", "assets/yui2.jpg", "assets/yui3.jpg"],
-      "color": "#b57fa5",
+      "color": "#D3D3D3",
       "profile": {
         "stats": [
           { "label": "Идеализм", "value": 95 },

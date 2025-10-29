@@ -3,12 +3,32 @@ body {
     font-family: 'Roboto Mono', monospace;
     margin: 0;
     padding: 0;
-    background-color: #0d1a26; 
+    background-color: #0d1a26;
     transition: background-color 0.5s ease;
+    position: relative; /* Для псевдо-элемента шума */
+}
+
+body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('assets/noise.png'); /* Путь к файлу с шумом */
+    opacity: 0.04;
+    pointer-events: none;
+    z-index: -1;
+}
+
+@keyframes gradient-animation {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
 }
 
 header {
-    background: url('/assets/end-of-evangelion.jpg') no-repeat center center/cover;
+    background: url('assets/end-of-evangelion.jpg') no-repeat center center/cover;
     padding: 3vw 10vw 15vw 10vw;
     color: #fff;
 }
@@ -44,8 +64,11 @@ main {
     justify-content: center;
     gap: 15px;
     padding: 20px;
-    background-color: rgba(0, 0, 0, 0.2);
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
     border-radius: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
     margin-bottom: 50px;
 }
 
@@ -55,11 +78,14 @@ main {
     border-radius: 20px;
     padding: 2px;
     cursor: pointer;
-    transition: border-color 0.3s ease;
+    transition: all 0.3s ease;
 }
 
-#character-carousel-container button:hover, #character-carousel-container button:focus {
+#character-carousel-container button:hover,
+#character-carousel-container button:focus {
     border-color: #fff;
+    box-shadow: 0 0 15px 3px var(--glow-color, rgba(255, 255, 255, 0.7));
+    transform: scale(1.05);
 }
 
 #character-carousel-container img {
@@ -70,6 +96,20 @@ main {
 
 #character-content {
     background-color: transparent;
+}
+
+/* Анимации появления */
+.fade-in-up {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 0.6s ease-out forwards;
+}
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .profile {
@@ -152,10 +192,19 @@ main {
 }
 
 .analysis-card {
-    background-color: #0d1a26;
-    padding: 25px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
     border-radius: 10px;
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    padding: 25px;
+    transition: all 0.3s ease;
+}
+
+.analysis-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 40px 10px var(--glow-color, rgba(0,0,0,0.3));
 }
 
 .analysis-card h3 {
@@ -185,18 +234,18 @@ main {
 }
 
 .summary {
-    margin-top: -20px; /* Отрицательный отступ */
+    margin-top: -20px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 10px; /* Уменьшил gap */
+    gap: 10px;
 }
 
 .summary h2 {
     font-size: 2rem;
-    margin-bottom: 0; /* Убрал отступ снизу */
-    margin-top: 5px; /* Маленький отступ сверху */
+    margin-bottom: 0;
+    margin-top: 5px;
 }
 
 .radar-chart-container {
@@ -205,10 +254,8 @@ main {
     max-width: 90vw;
     max-height: 90vw;
     margin: 0 auto;
-    margin-top: -10px; /* Отрицательный отступ у контейнера */
+    margin-top: -10px;
 }
-
-
 
 .gallery-container {
     position: relative;
@@ -276,84 +323,126 @@ main {
 }
 
 .diagnosis-section {
-    padding: 40px 0;
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
-    margin-top: 50px;
-}
-
-.diagnosis-section h2, .diagnosis-section h3 {
-    text-align: left;
-    margin-left: 20px;
+    padding: 50px;
+    margin-top: 60px;
     position: relative;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
 }
 
-.diagnosis-section h2::before, .diagnosis-section h3::before {
-    content: '|';
-    position: absolute;
-    left: -20px;
-    color: rgba(255, 255, 255, 0.5);
+.diagnosis-section::before {
+    display: none;
+}
+
+.diagnosis-section h2 {
+    font-family: 'Roboto Mono', monospace;
+    font-size: 2rem;
+    color: #ffffff;
+    margin: 0 0 40px 0;
+    padding-bottom: 15px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    letter-spacing: 1px;
+}
+
+.diagnosis-section h3 {
+    font-family: 'Roboto Mono', monospace;
+    font-size: 1.4rem;
+    color: #ffffff;
+    margin: 50px 0 25px 0;
+    letter-spacing: 0.5px;
 }
 
 .diagnosis-section > p {
-    text-align: left;
-    margin-left: 40px;
-    margin-bottom: 40px;
-    position: relative;
-}
-
-.diagnosis-section > p::before {
-    content: '\21B3';
-    position: absolute;
-    left: -25px;
-    top: 0;
-    color: rgba(255, 255, 255, 0.5);
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: #ffffff;
+    margin: 0 0 30px 0;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: 6px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 
 .video-evidence {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
     gap: 30px;
-    margin-top: 20px;
-    padding: 0 40px;
+    margin: 40px 0 0 0;
+    padding: 0;
 }
 
 .video-item {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    padding: 25px;
+    transition: all 0.3s ease;
     position: relative;
-    padding-left: 20px;
 }
 
-.video-item::before {
-    content: '\21B3';
-    position: absolute;
-    left: 0;
-    top: 0;
-    color: rgba(255, 255, 255, 0.5);
+.video-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 40px 10px var(--glow-color, rgba(0,0,0,0.3));
 }
-
 
 .video-item h4 {
-    text-align: left;
-    margin-bottom: 10px;
+    font-family: 'Roboto Mono', monospace;
+    font-size: 1.2rem;
+    color: #ffffff;
+    margin: 0 0 15px 0;
+    padding-bottom: 10px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .scene-description {
-    text-align: left;
-    color: #ccc;
-    font-size: 0.9rem;
-    margin-bottom: 15px;
-    padding-left: 20px;
-    position: relative;
-}
-
-.scene-description::before {
-    content: '\21B3';
-    position: absolute;
-    left: 0;
-    top: 0;
-    color: rgba(255, 255, 255, 0.5);
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #ffffff;
+    margin: 0 0 20px 0;
+    padding: 0;
 }
 
 .video-item video {
-    border-radius: 10px;
+    width: 100%;
+    border-radius: 6px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: #000;
+}
+
+@media (max-width: 768px) {
+    .diagnosis-section {
+        padding: 30px;
+        margin-top: 40px;
+    }
+    
+    .diagnosis-section h2,
+    .diagnosis-section h3 {
+        margin-left: 0;
+        font-size: 1.6rem;
+    }
+    
+    .diagnosis-section > p {
+        margin: 0 0 25px 0;
+        padding: 15px;
+    }
+    
+    .video-evidence {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        margin: 30px 0 0 0;
+    }
+    
+    .video-item {
+        padding: 20px;
+    }
 }
